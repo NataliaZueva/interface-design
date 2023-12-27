@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Entrance.qml</file>
+        <file>Register.qml</file>
+        <file>Enter.qml</file>
+        <file>MainPage.qml</file>
+        <file>Main1.qml</file>
+        <file>Map.qml</file>
+    </qresource>
+</RCC>
