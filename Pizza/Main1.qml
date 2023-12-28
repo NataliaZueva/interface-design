@@ -1,6 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.3
+import QtQuick.Controls.Material 2.15
 
 Page {
     id: root
@@ -27,8 +29,9 @@ Page {
         anchors.horizontalCenterOffset: 1
         anchors.topMargin: 36
         anchors.horizontalCenter: parent.horizontalCenter
-    }
 
+
+    }
     Image {
         id: pizzalogo
         width: 175

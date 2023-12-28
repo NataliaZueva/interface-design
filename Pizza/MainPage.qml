@@ -11,11 +11,15 @@ Page {
     title: qsTr("Pizza")
 
     signal buttonPep();
+    signal buttonMush();
+    signal buttonCheese();
     signal buttonPizz();
 
     signal buttonMain();
     signal buttonMenu();
     signal buttonMap();
+
+    signal buttonMap2();
 
 
     Rectangle {
@@ -200,6 +204,10 @@ Page {
                 id: pizza2
                 width: 70
                 height: 70
+                onClicked: {
+                    root.buttonCheese()
+                }
+
 
                 background: Rectangle {
                     color: "#C79B9F"
@@ -225,6 +233,10 @@ Page {
                 id: pizza3
                 width: 70
                 height: 70
+                onClicked: {
+                    root.buttonMush()
+                }
+
 
                 background: Rectangle {
                     color: "#C79B9F"
@@ -300,7 +312,7 @@ Page {
             border.width: 2
         }
         onClicked: {
-            root.buttonSing_in()
+            root.buttonMap2()
         }
 
     }

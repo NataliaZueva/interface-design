@@ -111,34 +111,14 @@ Page {
     TextField{
         Layout.alignment: Qt.AlignCenter
         Layout.fillWidth: true
-        id: email
-        anchors.top: userField.bottom
-        anchors.margins: 10
-        width: 158
-        height: 31
-        placeholderText: "email"
-        font.pixelSize: 16
-        horizontalAlignment: Text.AlignHCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-        background: Rectangle {
-            color: "#00000000"
-            radius: 15.5
-            implicitWidth: 100
-            implicitHeight: 30
-            border.color: "#062732"
-            border.width: 2
-        }
-    }
-    TextField{
-        Layout.alignment: Qt.AlignCenter
-        Layout.fillWidth: true
         id: passwordField
-        anchors.top: email.bottom
+        anchors.top: userField.bottom
         anchors.margins: 10
         width: 158
         height: 31
         placeholderText: "Пароль"
         font.pixelSize: 16
+        echoMode: TextInput.Password
         horizontalAlignment: Text.AlignHCenter
         anchors.horizontalCenter: parent.horizontalCenter
         background: Rectangle {
@@ -150,33 +130,95 @@ Page {
             border.width: 2
         }
     }
-    StackView {
-        id: stack_view
-        anchors.fill: parent
-        initialItem: entrance
-
-    }
-
-    Button {
-        id: contin
+    Button{
+        id: reg
+        text: qsTr("Зарегистрироваться")
+        width: 170
+        height: 40
         anchors.top: passwordField.bottom
-        anchors.margins: 40
-        width: 158
-        height: 158
-        text: qsTr("Продолжить")
-        font.pixelSize: 20
+        anchors.margins: 50
         anchors.horizontalCenter: parent.horizontalCenter
         background: Rectangle {
-            color: "#C79B9F"
-            radius: 90
-            implicitWidth: 100
-            implicitHeight: 30
-            border.color: "#00000000"
-            border.width: 2
+            color: parent.down ? "#b58388" : "#C79B9F"
+            border.color: "#26282a"
+            border.width:  parent.down ? 1 : 0
+            radius: 50
+        }
+        contentItem: Text {
+            text: parent.text
+            font: parent.font
+            opacity: enabled ? 1.0 : 0.3
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
         }
         onClicked: {
             root.buttonContin()
         }
 
     }
+    Button{
+        text: "Отчистить"
+        width: 170
+        height: 40
+        hoverEnabled: false
+        anchors.top: reg.bottom
+        anchors.margins: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+        onPressed: {usernameField.text = "";passwordField.text = "";userField.text = ""}
+        background: Rectangle {
+            color: parent.down ? "#b58388" : "#bf9296"
+            border.color: "#26282a"
+            border.width:  parent.down ? 1 : 0
+            radius: 50
+        }
+        contentItem: Text {
+            text: parent.text
+            font: parent.font
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+
+        }
+    }
+
+
+
+
+
+
+
+
+    StackView {
+        id: stack_view
+        anchors.fill: parent
+        anchors.rightMargin: 0
+        anchors.bottomMargin: -37
+        anchors.leftMargin: 0
+        anchors.topMargin: 37
+        initialItem: entrance
+    }
+
+//    Button {
+//        id: contin
+//        anchors.top: it.bottom
+//        anchors.margins:  20
+//        width: 130
+//        height: 130
+//        text: qsTr("Продолжить")
+//        font.pixelSize: 18
+//        anchors.horizontalCenter: parent.horizontalCenter
+//        background: Rectangle {
+//            color: "#C79B9F"
+//            radius: 90
+//            implicitWidth: 100
+//            implicitHeight: 30
+//            border.color: "#00000000"
+//            border.width: 2
+//        }
+//        onClicked: {
+//            root.buttonContin()
+//        }
+
+//    }
 }

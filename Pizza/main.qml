@@ -78,6 +78,29 @@ ApplicationWindow {
         onButtonPep: {
             stack_view.push(pepperoni)
         }
+        onButtonMush: {
+            stack_view.push(mushroom)
+        }
+        onButtonCheese: {
+            stack_view.push(cheese)
+        }
+        onButtonMain: {
+            stack_view.pop(mainPage)
+        }
+        onButtonMenu: {
+            stack_view.push(pizza)
+        }
+        onButtonMap: {
+            stack_view.push(map)
+        }
+        onButtonMap2: {
+            stack_view.push(map)
+        }
+    }
+
+    Pepperoni {
+        id: pepperoni
+        visible: false
         onButtonMain: {
             stack_view.pop(mainPage)
         }
@@ -89,8 +112,22 @@ ApplicationWindow {
         }
     }
 
-    Pepperoni {
-        id: pepperoni
+    Cheese {
+        id: cheese
+        visible: false
+        onButtonMain: {
+            stack_view.pop(mainPage)
+        }
+        onButtonMenu: {
+            stack_view.push(pizza)
+        }
+        onButtonMap: {
+            stack_view.push(map)
+        }
+    }
+
+    Mushroom {
+        id: mushroom
         visible: false
         onButtonMain: {
             stack_view.pop(mainPage)

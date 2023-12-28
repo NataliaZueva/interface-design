@@ -45,12 +45,134 @@ Page {
         y: 152
         anchors.top: pizzalogo.bottom
         anchors.margins: 40
-        text: qsTr("Кажется их ещё нет..")
+        text: qsTr("Пицца на любой вкус!")
         font.pixelSize: 20
         anchors.horizontalCenterOffset: 0
         anchors.topMargin: 36
         anchors.horizontalCenter: parent.horizontalCenter
     }
+
+
+
+
+    Item{
+        id: container
+        width: 250
+        height: 230
+        anchors.centerIn: parent
+
+        SwipeView {
+            id: view
+            currentIndex: 1
+            anchors.fill: parent
+            clip:true
+
+            Page {
+                background: Rectangle {
+                    color: "#c79b9f"
+                }
+                    Image {
+                        id: piz1
+                        width: 150
+                        height: 150
+                        source: "images/piz1.png"
+                        anchors.horizontalCenterOffset: 0
+                        fillMode: Image.PreserveAspectFit
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+
+                Page {
+                    background: Rectangle {
+                        color: "#c79b9f"
+                    }
+
+                    Image {
+                        id: piz2
+                        width: 150
+                        height: 150
+                        source: "images/piz2.png"
+                        anchors.horizontalCenterOffset: 0
+                        fillMode: Image.PreserveAspectFit
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+                Page {
+                    background: Rectangle {
+                        color: "#c79b9f"
+                    }
+                    Image {
+                        id: piz3
+                        width: 150
+                        height: 150
+                        source: "images/piz3.png"
+                        anchors.horizontalCenterOffset: 0
+                        fillMode: Image.PreserveAspectFit
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+                Page {
+                    background: Rectangle {
+                        color: "#c79b9f"
+                    }
+                    Image {
+                    id: piz4
+                    width: 150
+                    height: 150
+                    source: "images/piz4.png"
+                    anchors.horizontalCenterOffset: 0
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+                Page {
+                    background: Rectangle {
+                        color: "#c79b9f"
+                    }
+                    Image {
+                    id: piz5
+                    width: 150
+                    height: 150
+                    source: "images/piz5.png"
+                    anchors.horizontalCenterOffset: 0
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+                Page {
+                    background: Rectangle {
+                        color: "#c79b9f"
+                    }
+                    Image {
+                    id: piz6
+                    width: 150
+                    height: 150
+                    source: "images/piz6.png"
+                    anchors.horizontalCenterOffset: 0
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+        }
+
+
+        PageIndicator {
+            id: indicator
+            count: view.count
+            currentIndex: view.currentIndex
+            anchors.bottom: view.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+    }
+
+
+
 
     Button {
         id: button4
@@ -167,9 +289,6 @@ Page {
             implicitWidth: 100
         }
     }
-
-
-
 
 
 }

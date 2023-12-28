@@ -32,7 +32,9 @@ OTHER_FILES += \
     Non_existent.qml \
     images/menu1.png \
     images/menu2.png \
-    images/pizza_icon.png
+    images/pizza_icon.png \
+    images/map.jpg \
+    images/piz0.png
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -46,4 +48,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    images/map.jpg
+    Cheese.qml \
+    Mushroom.qml
